@@ -10,5 +10,6 @@ librosa.display.specshow(cqt, sr=sr, x_axis='time', y_axis='cqt_note')
 plt.title('Constant-Q power spectrum')
 plt.tight_layout()
 
-onset = librosa.onset.onset_strength_multi(S=cqt, sr=sr, max_size=84)
+plt.figure()
+onset = librosa.onset.onset_strength_multi(S=cqt, sr=sr, channels=range(83))
 librosa.display.specshow(onset, sr=sr, x_axis='time', y_axis='cqt_note')
